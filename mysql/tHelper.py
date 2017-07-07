@@ -9,6 +9,8 @@ params =[1]
 
 exeslq = MysqlHelper('localhost',3306,'python3','root','r&j892806304')
 view = exeslq.all(sql,params)
+
+# 遍历数组
 for temp in view:
     for i in temp:
         print ("%s\t"%i),

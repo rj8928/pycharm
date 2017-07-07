@@ -18,18 +18,23 @@ class MysqlHelper:
         self.cursor.close()
         self.conn.close()
 
+    # 增删改
     def cud(self,sql,params):
         try:
+            # 连接数据库
             self.open()
 
             self.cursor.execute(sql,params)
+            # 提交事务
             self.conn.commit()
 
+            # 关闭数据库连接
             self.close()
 
         except Exception,e:
             print (e.message)
 
+        # 查询
     def all(self,sql,params):
         try:
             self.open()
