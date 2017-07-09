@@ -48,3 +48,16 @@ class MysqlHelper:
 
         except Exception,e:
             print (e.message)
+
+    def one(self, sql, params):
+        try:
+            self.open()
+
+            self.cursor.execute(sql, params)
+            result = self.cursor.fetchone()
+
+            self.close()
+            return result
+
+        except Exception, e:
+            print (e.message)

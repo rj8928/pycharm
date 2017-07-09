@@ -22,4 +22,4 @@ elif result[0][0] == pwd2:
 else:
     print ("密码错误")
 
-#print (result)
+print (result)
